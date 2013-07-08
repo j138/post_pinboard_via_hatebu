@@ -1,0 +1,3 @@
+[submodule "pinboard-api"]
+	path = pinboard-api
+	url = https://github.com/kijin/pinboard-api.git
