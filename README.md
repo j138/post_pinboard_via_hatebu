@@ -15,7 +15,7 @@ submoduleとしてpinboard-apiのライブラリを追加します。
     git submodule add https://github.com/kijin/pinboard-api.git
 
 
-gitコマンドが無理なら**pinboard-api/pinboard-api.php**にファイルを設置
+gitコマンドが無理ならpinboard-api/pinboard-api.phpにファイルを設置
 
     mkdir pinboard-api
     wget https://raw.github.com/kijin/pinboard-api/master/pinboard-api.php -O pinboard-api/pinboard-api.php
