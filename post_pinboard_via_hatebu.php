@@ -8,7 +8,7 @@ define('PINBOARD_PASSWORD', 'YOUR_PINBOARD_PASSWORD'); // pinboardのパスワ�
 // 意図してない動作はexit
 if($_POST['key'] != HATENA_WEBHOOK_KEY) exit;
 if(!isset($_POST['title'], $_POST['url'], $_POST['status'], $_POST['comment'])) exit;
-if($_POST['status'] != 'add') exit;
+if($_POST['status'] != 'add' && $_POST['status'] != 'update') exit;
 
 // pinboardの初期化から保存まで
 require_once 'pinboard-api/pinboard-api.php';
