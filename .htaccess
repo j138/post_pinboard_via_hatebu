@@ -1,0 +1,3 @@
+<Files ~ "(\.htaccess|setting\.json)$">
+  deny from all
+</Files>
