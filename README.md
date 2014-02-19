@@ -15,7 +15,7 @@ Web Hookの受け取り先の登録をします。Web Hook用のキーを発行�
 
 https://pinboard.in/settings/password
 
-setting.json.defaultをコピーし、setting.jsonとして保存します。
+setting.json.tmplをコピーし、setting.jsonとして保存します。
 
 次に、setting.jsonのファイルを開き、
 hatena_webhook_keyの値に、はてなのwebhookキーを、
