@@ -3,10 +3,8 @@ php:
   - "5.4"
   - "5.3"
 before_install:
-  - php
 before_script:
 script:
-
 notifications:
   emails:
     - j138cm@gmail.com
