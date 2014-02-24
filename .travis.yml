@@ -1,0 +1,15 @@
+language: php
+php:
+  - "5.4"
+  - "5.3"
+before_install:
+  - php
+before_script:
+script:
+
+notifications:
+  emails:
+    - j138cm@gmail.com
+  on_success: always # default: change
+  on_failure: always
+
