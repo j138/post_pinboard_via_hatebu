@@ -9,23 +9,36 @@ $config = json_decode($config_load);
 // 意図してない動作はexit
 if($_POST['key'] != $config->hatena_webhook_key) exit;
 if(!isset($_POST['title'], $_POST['url'], $_POST['status'], $_POST['comment'])) exit;
-if($_POST['status'] != 'add' && $_POST['status'] != 'update') exit;
+if($_POST['status'] != 'add' && $_POST['status'] != 'update' && $_POST['status'] != 'delete') exit;
 
 
 // pinboard用に投稿内容をまとめる
 $param = array();
 $param['url'] = urldecode($_POST['url']);
-$param['description'] = mb_convert_encoding(urldecode($_POST['title']), 'UTF-8', 'auto');
-$param['extended'] = preg_replace('/\[.+\]/', '', mb_convert_encoding(urldecode($_POST['comment']), 'UTF-8', 'auto'));
 
-// はてブ流のタグの書き方を、pinboard流に変換
-preg_match_all('/\[([^\:\[\]]+)\]/', mb_convert_encoding(urldecode($_POST['comment']), 'UTF-8', 'auto'), $tags_tmp);
-$tags = (empty($tags_tmp[1])) ? '' : $tags_tmp[1];
-$param['tags'] = trim(implode(' ', $tags));
+// ステータスごとにクエリを生成
+switch($_POST['status']) {
+    case 'add':
+    case 'update':
+        $status = 'add';
+        $param['description'] = mb_convert_encoding(urldecode($_POST['title']), 'UTF-8', 'auto');
+        $param['extended'] = preg_replace('/\[.+\]/', '', mb_convert_encoding(urldecode($_POST['comment']), 'UTF-8', 'auto'));
 
+        // はてブ流のタグの書き方を、pinboard流に変換
+        preg_match_all('/\[([^\:\[\]]+)\]/', mb_convert_encoding(urldecode($_POST['comment']), 'UTF-8', 'auto'), $tags_tmp);
+        $tags = (empty($tags_tmp[1])) ? '' : $tags_tmp[1];
+        $param['tags'] = trim(implode(' ', $tags));
+        break;
+
+    case 'delete':
+        $status = 'delete';
+        break;
+    default:
+        exit;
+}
 
 // curlで投稿
-$req_url = 'https://api.pinboard.in/v1/posts/add?auth_token='.$config->pinboard_token.'&'. http_build_query($param);
+$req_url = 'https://api.pinboard.in/v1/posts/'.$status.'?auth_token='.$config->pinboard_token.'&'. http_build_query($param);
 
 $curl_handle = curl_init();
 curl_setopt_array($curl_handle, array(
