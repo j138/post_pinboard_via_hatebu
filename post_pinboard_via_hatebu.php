@@ -23,7 +23,10 @@ switch($_POST['status']) {
         $status = 'add';
         $param['description'] = mb_convert_encoding(urldecode($_POST['title']), 'UTF-8', 'auto');
         $param['extended'] = preg_replace('/\[.+\]/', '', mb_convert_encoding(urldecode($_POST['comment']), 'UTF-8', 'auto'));
-		$param['shared'] = (int)isset($_POST['is_private']);
+
+        if (isset($_POST['is_private'])) {
+            $param['shared'] = $_POST['is_private'] == 1 ? 'no' : 'yes';
+        }
 
         // はてブ流のタグの書き方を、pinboard流に変換
         preg_match_all('/\[([^\:\[\]]+)\]/', mb_convert_encoding(urldecode($_POST['comment']), 'UTF-8', 'auto'), $tags_tmp);
