@@ -1,2 +1,2 @@
 <?php
-echo 'hi heroku'
+echo 'hi heroku';
