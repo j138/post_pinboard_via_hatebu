@@ -34,7 +34,7 @@ if($save_flg == true) {
 
     <p>
       APIキー設定後、[http://b.hatena.ne.jp/UR_HATENA_ID/config]のWeb Hookの項目にイベントを受け取るURLを入力してください。<br />
-      e.g. <?=sprintf('%s://%s/post_pinboard_via_hatebu.php', $_SERVER['REQUEST_SCHEME'], $_SERVER['HTTP_HOST'])?>
+      e.g. <?=sprintf('%s://%s/app.php', $_SERVER['REQUEST_SCHEME'], $_SERVER['HTTP_HOST'])?>
     </p>
 
     <hr />
