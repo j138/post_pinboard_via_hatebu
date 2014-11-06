@@ -8,6 +8,11 @@ switch (true) {
         die('このページを見るにはログインが必要です');
 }
 
+// heroku側でAPIキーが設定されていれば、それらを優先
+if(isset($_SERVER['HATENA_WEBHOOK_KEY']) && $_SERVER['HATENA_WEBHOOK_KEY'] !== 'SET_UR_WEBHOOK_KEY'){
+  exit('heroku側でAPIキーが設定済みです');
+}
+
 $msg = '';
 
 $config_file_name = 'setting.json';

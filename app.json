@@ -11,6 +11,8 @@
   "repository": "https://github.com/j138/post_pinboard_via_hatebu",
   "env": {
     "BASIC_AUTH_USER": "root",
-    "BASIC_AUTH_PW": "alpine"
+    "BASIC_AUTH_PW": "alpine",
+    "HATENA_WEBHOOK_KEY": "SET_UR_WEBHOOK_KEY",
+	"PINBOARD_TOKEN": "SET_UR_PINBOARD_TOKEN"
   }
 }

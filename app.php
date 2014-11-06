@@ -4,6 +4,12 @@
 $config_load = file_get_contents('setting.json');
 $config = json_decode($config_load);
 
+// heroku側でAPIキーが設定されていれば、それらを優先
+if(isset($_SERVER['HATENA_WEBHOOK_KEY']) && $_SERVER['HATENA_WEBHOOK_KEY'] !== 'SET_UR_WEBHOOK_KEY'){
+  $config->hatena_webhook_key = $_SERVER['HATENA_WEBHOOK_KEY'];
+  $config->pinboard_token = $_SERVER['PINBOARD_TOKEN'];
+}
+
 
 // 意図してない動作はexit
 if($config->hatena_webhook_key === 'UR-WEBHOOK-KEY') exit('plz setting webhook-key');
