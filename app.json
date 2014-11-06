@@ -1,0 +1,12 @@
+{
+	"name": "post pinboard via hatebu",
+	"description": "はてブのwebhookを受けて、pinboardへPOST",
+	"keyords": [
+		"php",
+		"php56",
+		"pinboard",
+		"hatena",
+		"hatena bookmark"
+	],
+	"repository": "https://github.com/j138/post_pinboard_via_hatebu"
+}
