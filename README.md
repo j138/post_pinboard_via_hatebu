@@ -17,9 +17,7 @@ https://pinboard.in/settings/password
 
 setting.json.tmplをコピーし、setting.jsonとして保存します。
 
-次に、setting.jsonのファイルを開き、
-hatena_webhook_keyの値に、はてなのwebhookキーを、
-pinboard_tokenの値に、pinboardのAPI Tokenへ書き換えます。
+urwebserver.com/index.phpにアクセスし、各APIキーを設定してください。
 
 はてブした際、pinboardにブックマークされていればOK!
 
