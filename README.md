@@ -24,6 +24,8 @@ https://pinboard.in/settings/password
 
 urwebserver.com/index.phpにアクセスし、各APIキーを設定するか、
 直接setting.jsonを開き記述してください。
+basic認証がかかっており、app.jsonで変更できます。
+初期値: root:alpine
 
 ## 確認
 はてブした際、pinboardにブックマークされていればOK!
