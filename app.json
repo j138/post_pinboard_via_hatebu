@@ -11,6 +11,6 @@
   "repository": "https://github.com/j138/post_pinboard_via_hatebu",
   "env": {
     "BASIC_AUTH_USER": "root",
-    "BASIC_AUTH_PASS": "alpine"
+    "BASIC_AUTH_PW": "alpine"
   }
 }

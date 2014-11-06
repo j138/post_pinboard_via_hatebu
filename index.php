@@ -1,4 +1,13 @@
 <?php
+switch (true) {
+    case !isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']):
+    case $_SERVER['PHP_AUTH_USER'] !== $_SERVER['BASIC_AUTH_USER']:
+    case $_SERVER['PHP_AUTH_PW']   !== $_SERVER['BASIC_AUTH_PW']:
+        header('WWW-Authenticate: Basic realm="Enter username and password."');
+        header('Content-Type: text/plain; charset=utf-8');
+        die('このページを見るにはログインが必要です');
+}
+
 $msg = '';
 
 $config_file_name = 'setting.json';
