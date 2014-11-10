@@ -13,8 +13,8 @@ if(isset($_SERVER['HATENA_WEBHOOK_KEY']) && $_SERVER['HATENA_WEBHOOK_KEY'] !== '
 // 意図してない動作はexit
 if($config->hatena_webhook_key === 'SET_UR_WEBHOOK_KEY') exit('plz setting webhook-key');
 if($_POST['key'] != $config->hatena_webhook_key) exit;
-if(!isset($_POST['title'], $_POST['url'], $_POST['status'], $_POST['comment'])) exit;
-if($_POST['status'] != 'add' && $_POST['status'] != 'update' && $_POST['status'] != 'delete') exit('plz post me');
+if(!isset($_POST['title'], $_POST['url'], $_POST['status'], $_POST['comment'])) exit('plz post me');
+if($_POST['status'] != 'add' && $_POST['status'] != 'update' && $_POST['status'] != 'delete') exit('plz input correct status');
 
 
 // pinboard用に投稿内容をまとめる
