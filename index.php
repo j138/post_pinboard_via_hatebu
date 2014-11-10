@@ -3,6 +3,11 @@ $config_file_name = 'setting.json';
 $config_load = file_get_contents($config_file_name);
 $config = json_decode($config_load, true);
 
+if (isset($_SERVER['BASIC_AUTH_USER']) && isset($_SERVER['BASIC_AUTH_PW'])) {
+    $config['BASIC_AUTH_USER'] = $_SERVER['BASIC_AUTH_USER'];
+    $config['BASIC_AUTH_PW']   = $_SERVER['BASIC_AUTH_PW'];
+}
+
 switch (true) {
     case !isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']):
     case $_SERVER['PHP_AUTH_USER'] !== $config['BASIC_AUTH_USER']:
