@@ -1,0 +1,11 @@
+box: wercker/php
+build:
+    steps:
+      - script:
+          name: install dependencies
+          code: composer install --no-interaction
+      - script:
+          name: echo php information
+          code: |
+            echo "php version $(php --version) running"
+            echo "from location $(which php)"
