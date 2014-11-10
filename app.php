@@ -1,7 +1,4 @@
 <?php
-	$_SERVER['HATENA_WEBHOOK_KEY'] = 'hatena_webhook_key';
-	$_SERVER['PINBOARD_TOKEN'] = 'pinboard_token';
-
 // はてなブックマークのWEBHOOKから、pinboardへブックマークするスクリプト
 // config読み込み
 $config_load = file_get_contents('setting.json');
@@ -17,7 +14,7 @@ if(isset($_SERVER['HATENA_WEBHOOK_KEY']) && $_SERVER['HATENA_WEBHOOK_KEY'] !== '
 if($config->hatena_webhook_key === 'SET_UR_WEBHOOK_KEY') exit('plz setting webhook-key');
 if($_POST['key'] != $config->hatena_webhook_key) exit;
 if(!isset($_POST['title'], $_POST['url'], $_POST['status'], $_POST['comment'])) exit;
-if($_POST['status'] != 'add' && $_POST['status'] != 'update' && $_POST['status'] != 'delete') exit;
+if($_POST['status'] != 'add' && $_POST['status'] != 'update' && $_POST['status'] != 'delete') exit('plz post me');
 
 
 // pinboard用に投稿内容をまとめる
