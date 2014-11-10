@@ -5,8 +5,8 @@ $config = json_decode($config_load, true);
 
 switch (true) {
     case !isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']):
-    case $_SERVER['PHP_AUTH_USER'] !== $config['basic_auth_user']:
-    case $_SERVER['PHP_AUTH_PW']   !== $config['basic_auth_pw']:
+    case $_SERVER['PHP_AUTH_USER'] !== $config['BASIC_AUTH_USER']:
+    case $_SERVER['PHP_AUTH_PW']   !== $config['BASIC_AUTH_PW']:
         header('WWW-Authenticate: Basic realm="Enter username and password."');
         header('Content-Type: text/plain; charset=utf-8');
         die('このページを見るにはログインが必要です');
