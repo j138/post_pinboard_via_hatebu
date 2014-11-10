@@ -1,3 +1,5 @@
+[![wercker status](https://app.wercker.com/status/27e6fdbf265be790ba608bda0f52efcd/m "wercker status")](https://app.wercker.com/project/bykey/27e6fdbf265be790ba608bda0f52efcd)
+
 ## 使い方
 herokuボタンを押すか、手動でインストールのどちらかが選べます。
 
