@@ -1,5 +1,6 @@
 <?php
-exit;
+if ($_GET['x'] !== $_SERVER['BASIC_AUTH_PW']) exit;
+
 $config_load = file_get_contents('setting.json');
 $config = json_decode($config_load);
 
