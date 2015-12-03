@@ -1,3 +1,5 @@
+はてブとpinboard連携
+
 [![wercker status](https://app.wercker.com/status/706796de2dfd3c62a7a25d8c1966907a/s "wercker status")](https://app.wercker.com/project/bykey/706796de2dfd3c62a7a25d8c1966907a)
 
 ## 使い方

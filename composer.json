@@ -1,5 +1,12 @@
 {
-  "require": {
-    "ext-mbstring": "*"
-  }
+    "name": "j138/post_pinboard_via_hatebu",
+    "authors": [
+        {
+            "name": "j138",
+            "email": "j138cm@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-mbstring": "*"
+    }
 }
